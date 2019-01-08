@@ -1,3 +1,4 @@
+ARG CACHEBUST=1
 FROM node:alpine AS builder
 
 WORKDIR '/app'
@@ -8,7 +9,6 @@ RUN npm install
 COPY . .
 
 CMD ["npm", "run", "build"]
-
 
 FROM nginx
 EXPOSE 80
